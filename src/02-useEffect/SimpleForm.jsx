@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Message } from "./Message";
 
 
 export const SimpleForm = () => {
@@ -20,15 +21,15 @@ export const SimpleForm = () => {
     //!Cuando el arreglo esta vacio, es porque se quiere que el useEffect se
     //!dispare una sola vez
     useEffect(()=>{
-        console.log('useeffect');
+        //console.log('useeffect');
     },[]);
 
     useEffect(()=>{
-        console.log('formState change');
+        //console.log('formState change');
     },[formState]);
 
     useEffect(()=>{
-        console.log('email change');
+        //console.log('email change');
     },[email]);
 
     return (
@@ -52,6 +53,11 @@ export const SimpleForm = () => {
                 value={ email }
                 onChange={ onInputChange }
             />
+
+            {
+                (username === 'pablito2') && <Message/>
+            }
+            
         </>
     )
 }
