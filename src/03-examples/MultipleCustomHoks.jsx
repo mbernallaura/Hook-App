@@ -1,5 +1,5 @@
-import { useCounter } from "../hooks/useCounter";
-import { useFetch } from "../hooks/useFetch"
+import { useCounter, useFetch } from "../hooks";
+import { NameChapter, LoadingChaper } from "./";
 
 
 export const MultipleCustomHoks = () => {
@@ -12,28 +12,19 @@ export const MultipleCustomHoks = () => {
     
     return (
         <>
-            <h1>Breaking Bad quotes</h1>
+            <h1>Rick and Morty chapters</h1>
             <hr />
             {
-                (isLoading)?(
-
-                    <div className="alert alert-info text-center">
-                        loading...
-                    </div>
-                ):(
-
-                    <blockquote className="blockquote text-end">
-                        <p className="mb-1">{ name }</p>
-                        <footer className="blockquote-footer">{ air_date }</footer>
-                    </blockquote>
-                )
+                (isLoading)
+                ?<LoadingChaper/>
+                :<NameChapter chapter={ name } air_date={ air_date }/>
             }
 
             <button 
                 onClick={() =>increment(1)} 
                 disabled={ isLoading }
                 className="btn btn-primary">
-                Next quote</button>
+                Next chapter</button>
         </>
     )
 }
