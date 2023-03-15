@@ -30,7 +30,7 @@ const newTodo = {
 }
 
 const addTodoAction = {
-    type: '[TODO] add todo',
+    type: '[TODO] Add todo',
     payload: newTodo,
 }
 
