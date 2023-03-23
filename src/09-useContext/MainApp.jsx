@@ -1,3 +1,4 @@
+import { UserProvider } from "./context/UserProvider";
 import { Navigate, Route, Routes } from "react-router";
 import { HomePage } from './HomePage';
 import { AboutPage } from './AboutPage';
@@ -8,7 +9,7 @@ import { Navbar } from "./Navbar";
 
 export const MainApp = () => {
     return (
-        <>
+        <UserProvider>
             {/* <h1>MainApp</h1>  */}
             <Navbar/>
             <hr />
@@ -28,6 +29,6 @@ export const MainApp = () => {
                 es decir, si pongo /hhhahaa, el path se cambiara por el que se le indico en este caso quedaria /about */}
                 <Route path="*" element={ <Navigate to={"/about"}/> }/>
             </Routes>
-        </>
+        </UserProvider>
     )
 }
